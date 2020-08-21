@@ -7,7 +7,6 @@ void CriarPecas();
 struct PECA MontaPecaStruct(int j, int i);
 void ExibirPecas();
 void EmbaralharPecas();
-void ExibirPecasEmbaralhadas();
 
 typedef struct PECA
 {
@@ -22,11 +21,11 @@ PEDRA pecasEmbaralhadas[28];
 int main()
 {
     CriarPecas();
-    ExibirPecas();
+    ExibirPecas(pecasDisponiveis);
     EmbaralharPecas();
-    ExibirPecasEmbaralhadas();
+    ExibirPecas(pecasEmbaralhadas);
     CriarPecas();
-    ExibirPecas();
+    ExibirPecas(pecasDisponiveis);
     return 0;
 }
 
@@ -48,24 +47,13 @@ void CriarPecas()
     }
 }
 
-void ExibirPecas()
+void ExibirPecas(PEDRA pecas[])
 {
     for(int i = 0; i < 28; i++)
     {
-        printf("Peça %d: %d | %d \n",i+1,pecasDisponiveis[i].ladoesquerdo,pecasDisponiveis[i].ladodireito);
+        printf("Peça %d: %d | %d \n",i+1,pecas[i].ladoesquerdo,pecas[i].ladodireito);
     } 
 }
-
-
-void ExibirPecasEmbaralhadas()
-{
-    for(int i = 0; i < 28; i++)
-    {
-        printf("Peça %d: %d | %d \n",i+1,pecasEmbaralhadas[i].ladoesquerdo,pecasEmbaralhadas[i].ladodireito);
-    } 
-}
-
-
 
 PEDRA MontaPecaStruct(int j, int i)
 {
@@ -76,7 +64,6 @@ PEDRA MontaPecaStruct(int j, int i)
 
     return retorno;
 }
-
 
 void EmbaralharPecas()
 {
