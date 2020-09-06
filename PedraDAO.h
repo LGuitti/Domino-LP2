@@ -1,3 +1,5 @@
+void InicializarPecaValorDefault();
+
 typedef struct PECA
 {
     int ladoesquerdo;
@@ -5,6 +7,7 @@ typedef struct PECA
 }PEDRA;
 
 int embaralhada = 0;
+int ultimaPecaEmbaralhadaPega = 0;
 PEDRA pecasDisponiveis[28];
 PEDRA pecasEmbaralhadas[28];
 
@@ -20,6 +23,7 @@ PEDRA MontaPecaStruct(int j, int i)
 
 void CriarPecas()
 {
+	InicializarPecaValorDefault();
     int numeroPecaAtual = 6;
     int numeroInicio = 0;
     int count = 0;

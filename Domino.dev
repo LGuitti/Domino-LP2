@@ -28,8 +28,8 @@ Folders=Model,View
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=0000000000000000000000000
-UnitCount=3
+CompilerSettings=0000000000000000001000000
+UnitCount=4
 
 [VersionInfo]
 Major=1
@@ -71,7 +71,17 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit3]
-FileName=Model.h
+FileName=PedraDAO.h
+CompileCpp=0
+Folder=Model
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
+FileName=JogadorDAO.h
 CompileCpp=0
 Folder=Model
 Compile=1
