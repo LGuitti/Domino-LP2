@@ -78,15 +78,18 @@ void Comprar(int jogadorAtual)
 {
 	if(ultimaPecaEmbaralhadaPega <= 27)
 	{
+		int inseriu = 0;
 		if(jogadorAtual == 1)
 		{
-			int inseriu = 0;
 			int pos = 0;
 			do{
 				if(j1.pedras[pos].ladodireito == -1)
 				{
 					j1.pedras[pos].ladodireito = pecasEmbaralhadas[ultimaPecaEmbaralhadaPega].ladodireito;
 					j1.pedras[pos].ladoesquerdo = pecasEmbaralhadas[ultimaPecaEmbaralhadaPega].ladoesquerdo;
+					pecasEmbaralhadas[ultimaPecaEmbaralhadaPega].ladoesquerdo = -1;
+					pecasEmbaralhadas[ultimaPecaEmbaralhadaPega].ladodireito  = -1;
+					ultimaPecaEmbaralhadaPega++;
 					inseriu = 1;
 				}
 				
@@ -94,7 +97,6 @@ void Comprar(int jogadorAtual)
 			}while(inseriu == 0);
 		}else
 		{
-			int inseriu = 0;
 			int pos = 0;
 			do{
 				if(j2.pedras[pos].ladodireito == -1)
@@ -162,7 +164,8 @@ void EscolherPecaOuComprar(int jogadorAtual)
 			Comprar(jogadorAtual);
 			sair = 1;
 		}else{
-			if(VerificaPecaEscolhida(peca,jogadorAtual) == 1)
+			//VERIFICA E FAZ A INSERÇÃO DA PEÇA
+			if(VerificaPecaEscolhida(peca,jogadorAtual) == 1 && AdicionarPedraMesa(jogadorAtual == 1 ? j1.pedras[peca -1] : j2.pedras[peca -1]) == 1)
 			{
 				RemovePecaJogador(peca,jogadorAtual);
 				sair = 1;
@@ -173,6 +176,7 @@ void EscolherPecaOuComprar(int jogadorAtual)
 
 void jogarPeca(int jogadorAtual)
 {
+	ExibirMesa();
 	printf("Vez Jogador %d\n", jogadorAtual);
 	if(jogadorAtual == 1)
 	{

@@ -1,5 +1,6 @@
 void IniciarJogo(int nJogadores);
 void Jogar();
+void ExibirMesa();
 
 void ExibirPecas(PEDRA pecas[])
 {
@@ -139,5 +140,38 @@ void MostrasPecaDisponivel(int jogador)
 	
 	printf("Pressione 0 para comprar\n");
 }
+
+void ExibirMesa()
+{
+	if(mesa.inicializada == 1)
+	{
+		if(mesa.pedraLadoDireito.ladodireito == mesa.pedraLadoEsquerdo.ladodireito && mesa.pedraLadoDireito.ladoesquerdo == mesa.pedraLadoEsquerdo.ladoesquerdo)
+		{
+			printf("%d|%d \n", mesa.ladoEsquerdo, mesa.ladoDireito);
+			
+		}else
+		{
+			if(mesa.pedraLadoEsquerdo.ladoesquerdo == mesa.ladoEsquerdo)
+			{
+				printf("%d|%d",mesa.pedraLadoEsquerdo.ladoesquerdo,mesa.pedraLadoEsquerdo.ladodireito);
+			}
+			else
+			{
+				printf("%d|%d",mesa.pedraLadoEsquerdo.ladodireito,mesa.pedraLadoEsquerdo.ladoesquerdo);	
+			}
+			
+			printf(" ... ");
+			
+			if(mesa.pedraLadoDireito.ladodireito == mesa.ladoDireito)
+			{
+				printf("%d|%d \n",mesa.pedraLadoDireito.ladoesquerdo,mesa.pedraLadoDireito.ladodireito);
+			}else
+			{
+				printf("%d|%d \n",mesa.pedraLadoDireito.ladodireito,mesa.pedraLadoDireito.ladoesquerdo);
+			}
+		}
+	}
+}
+
 
 
