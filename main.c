@@ -2,16 +2,12 @@
 #include <stdlib.h>
 #include<stdbool.h> 
 #include<time.h> 
-#include "PedraDAO.h"
-#include "MesaDAO.h"
-#include "JogadorDAO.h"
-#include "View.h"
+#include "DominoController.h"
 
 
 void main()
 {
-    CriarPecas();
-    ExibirMenu();
+    Iniciar();
 }
 
 void Jogar()

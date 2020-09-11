@@ -1,6 +1,8 @@
 void IniciarJogo(int nJogadores);
 void Jogar();
 void ExibirMesa();
+void DefinirAcaoJogador(int opcao);
+void DefinirAcaoMenu(int opcao);
 
 void ExibirPecas(PEDRA pecas[])
 {
@@ -25,22 +27,7 @@ void ExibirMenu()
         printf("[0] - Sair \n");
         scanf("%d", &opcao);
         
-
-        switch (opcao)
-        {
-            case 1: EmbaralharPecas();
-                    break;
-            case 2: embaralhada == 0 ? ExibirPecas(pecasDisponiveis) : ExibirPecas(pecasEmbaralhadas);
-                    break;
-            case 3: Desembalhar();
-                    break;
-        	case 4: Jogar();
-                    break;
-            case 0: break;
-            default: printf("Escolha uma opção válida \n");
-					break;
-        } 
-		
+		DefinirAcaoMenu(opcao);
 		
     }while(opcao != 0);
 }
@@ -55,16 +42,7 @@ void DefinirNumeroJogadores()
 		printf("[0] - Retornar Menu\n");		
 		scanf("%d", &opcao);
 		
-		switch (opcao)
-        {
-            case 1: IniciarJogo(1);
-                    break;
-            case 2: IniciarJogo(2);
-                    break;
-            case 0: break;
-            default: printf("Escolha uma opção válida \n");
-					break;
-        } 
+		DefinirAcaoJogador(opcao);
 		
 	}while(opcao != 0);
 }
@@ -108,8 +86,15 @@ void IniciarJogo(int nJogadores)
 		}else{
 			vezJogador = 1;	
 		}	
+		
 		ganhador = VerificarGanhador();	
-	}while(ganhador == 0);
+	}while(ganhador == 0 && desistir == 0);
+	
+	if(desistir == 1)
+	{
+		printf("Jogador %d desistiu, OTARIO!!!\n\n", vezJogador == 1 ? 2 : 1);
+		desistir = 0;
+	}
 	
 	printf("Ganhador foi o jogador numero %d\n",ganhador);
 }
@@ -138,7 +123,7 @@ void MostrasPecaDisponivel(int jogador)
 		}
 	}
 	
-	printf("Pressione 0 para comprar\n");
+	printf("Pressione 0 para comprar e -1 para desistir\n");
 }
 
 void ExibirMesa()

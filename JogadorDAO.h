@@ -9,6 +9,7 @@ JOGADOR j1;
 JOGADOR j2;
 
 int numeroDeJogadores = 2;
+int desistir = 0;
 
 void DistribuirPeca()
 {
@@ -159,10 +160,18 @@ void EscolherPecaOuComprar(int jogadorAtual)
 		printf("Qual peca deseja jogar?\n");
 		scanf("%d", &peca);
 		
-		if(peca == 0)
+		if(peca == 0 || peca == -1)
 		{
-			Comprar(jogadorAtual);
-			sair = 1;
+			if(peca == 0)
+			{
+				Comprar(jogadorAtual);
+				sair = 1;
+			}else
+			{
+				desistir = 1;
+				sair = 1;
+			}
+			
 		}else{
 			//VERIFICA E FAZ A INSERÇÃO DA PEÇA
 			if(VerificaPecaEscolhida(peca,jogadorAtual) == 1 && AdicionarPedraMesa(jogadorAtual == 1 ? j1.pedras[peca -1] : j2.pedras[peca -1]) == 1)
