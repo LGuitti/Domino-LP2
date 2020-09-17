@@ -4,6 +4,16 @@
 #include<time.h> 
 #include "DominoController.h"
 
+/***********************************************************************************************************/
+/*                            		PROJETO DOMINÓ                                                         */
+/*                            								                                               */
+/*                                  INTEGRANTE:				                                               */
+/*                             GABRIEL SOUZA DA SILVA                                                      */
+/*                             	JULIA FERREIRA SILVA                                                       */
+/*                             NICOLAS DE AGUIAR CALISTO                                                   */
+/*                                THAINÁ CRUZ SILVA                                                         */
+/***********************************************************************************************************/
+
 
 void main()
 {

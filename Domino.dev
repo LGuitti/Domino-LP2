@@ -24,12 +24,12 @@ HostApplication=
 UseCustomMakefile=0
 CustomMakefile=
 CommandLine=
-Folders=Model,View
+Folders=Controller,Model,View
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
 CompilerSettings=0000000000000000001000000
-UnitCount=5
+UnitCount=6
 
 [VersionInfo]
 Major=1
@@ -94,6 +94,16 @@ BuildCmd=
 FileName=MesaDAO.h
 CompileCpp=0
 Folder=Model
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit6]
+FileName=DominoController.h
+CompileCpp=0
+Folder=Controller
 Compile=1
 Link=1
 Priority=1000
