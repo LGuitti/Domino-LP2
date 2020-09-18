@@ -3,6 +3,7 @@
 Este trabalho tem o intuito de aplicar os conhecimentos da linhas C em um projeto de um ou mais jogadores. A aplicação consiste em uma simulação de um projeto MVC usando Structs.
 
 [Integrantes do grupo](##Integrantes-do-grupo-6)
+ 
 [Estruturas Criadas](##Estruturas)
 ***
 
