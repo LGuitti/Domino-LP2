@@ -1,7 +1,5 @@
 #include<stdio.h>
-#include <stdlib.h>
-#include<stdbool.h> 
-#include<time.h> 
+#include <stdlib.h> 
 #include "DominoController.h"
 
 /***********************************************************************************************************/
@@ -22,9 +20,17 @@ void main()
 
 void Jogar()
 {
+	int opcao;
 	EmbaralharPecas();
 	InicializarMesa();
-	DefinirNumeroJogadores();
+	
+	do
+	{
+		opcao = DefinirNumeroJogadores();
+		DefinirAcaoJogador(opcao);
+		
+	}while(opcao != 0);
+	
 	CriarPecas();
 }
 

@@ -1,3 +1,6 @@
+#include<stdbool.h> 
+#include<time.h>
+
 void InicializarPecaValorDefault();
 
 typedef struct PECA

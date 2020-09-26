@@ -16,35 +16,30 @@ void ExibirPecas(PEDRA pecas[])
     } 
 }
 
-void ExibirMenu()
+int ExibirMenu()
 {
 	int opcao;
-	do{
-        printf("[1] - Embaralhar peças \n");
-        printf("[2] - Exibir peças \n");
-        printf("[3] - Desembalhar as pe�as \n");
-        printf("[4] - Jogar \n");
-        printf("[0] - Sair \n");
-        scanf("%d", &opcao);
-        
-		DefinirAcaoMenu(opcao);
-		
-    }while(opcao != 0);
+	
+    printf("[1] - Embaralhar peças \n");
+    printf("[2] - Exibir peças \n");
+    printf("[3] - Desembalhar as pe�as \n");
+    printf("[4] - Jogar \n");
+    printf("[0] - Sair \n");
+    scanf("%d", &opcao);
+	return opcao;
 }
 
-void DefinirNumeroJogadores()
+int DefinirNumeroJogadores()
 {
 	int valido = 0;
 	int opcao = 0;
-	do{
-		printf("[1] - Um Jogador\n");	
-		printf("[2] - Dois Jogadores\n");
-		printf("[0] - Retornar Menu\n");		
-		scanf("%d", &opcao);
-		
-		DefinirAcaoJogador(opcao);
-		
-	}while(opcao != 0);
+	
+	printf("[1] - Um Jogador\n");	
+	printf("[2] - Dois Jogadores\n");
+	printf("[0] - Retornar Menu\n");		
+	scanf("%d", &opcao);
+	
+	return opcao;
 }
 
 void ExibirPecaJogadores()
