@@ -36,10 +36,23 @@ int DefinirNumeroJogadores()
 	
 	printf("[1] - Um Jogador\n");	
 	printf("[2] - Dois Jogadores\n");
+	printf("[3] - Exibir regras\n");
 	printf("[0] - Retornar Menu\n");		
 	scanf("%d", &opcao);
 	
 	return opcao;
+}
+
+void ExibirRegras()
+{
+	printf("/***********************************************************************************************************/\n");
+	printf("                            	      		REGRAS DOMINO                                               \n");
+	printf("                            		CADA JOGADOR INICIA COM 7 PECAS				                           \n");
+	printf("                    	   O JOGADOR DEVE COMPRAR DESISTIR OU JOGAR UMA PECA                                 \n");
+	printf("           	     O JOGO TERMINA QUANDO ALGUEM DESISTE OU QUANDO ACABAM AS PEÇAS NA MAO                     \n");
+	printf("                  AS PECAS DEVEM TER AO MENOS UM LADO QUE COMBINA COM AS PECAS DA MESA                     \n");
+	printf("                                            BOA SORTE                                                     \n");
+	printf("/***********************************************************************************************************/\n");
 }
 
 void ExibirPecaJogadores()
@@ -87,11 +100,14 @@ void IniciarJogo(int nJogadores)
 	
 	if(desistir == 1)
 	{
-		printf("Jogador %d desistiu, OTARIO!!!\n\n", vezJogador == 1 ? 2 : 1);
+		printf("Jogador %d desistiu, OTARIO!!!\n", vezJogador == 1 ? 2 : 1);
 		desistir = 0;
+		
+		printf("Ganhador foi o jogador numero %d\n\n", vezJogador);
+		
+	}else{
+		printf("Ganhador foi o jogador numero %d\n", ganhador);
 	}
-	
-	printf("Ganhador foi o jogador numero %d\n",ganhador);
 }
 
 void MostrasPecaDisponivel(int jogador)

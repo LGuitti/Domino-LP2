@@ -22,6 +22,8 @@ void DefinirAcaoJogador(int opcao)
                 break;
         case 2: IniciarJogo(2);
                 break;
+        case 3: ExibirRegras();  
+		        break;
         case 0: break;
         default: printf("Escolha uma opção válida \n");
 				break;
