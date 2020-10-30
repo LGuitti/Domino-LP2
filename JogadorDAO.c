@@ -1,4 +1,4 @@
-void MostrasPecaDisponivel(int jogadorAtual);
+/*void MostrasPecaDisponivel(int jogadorAtual);
 
 
 void DistribuirPeca()
@@ -187,4 +187,4 @@ void jogarPeca(int jogadorAtual)
 		MostrasPecaDisponivel(2);
 		EscolherPecaOuComprar(2);
 	}
-}
+}*/

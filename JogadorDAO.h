@@ -14,7 +14,7 @@ int desistir = 0;
 void DistribuirPeca()
 {
 	InicializarPecaValorDefault();
-	if(numeroDeJogadores >= 1)
+	if(numeroDeJogadores > 0)
 	{ 
 		int x = 0;
 		for(x; x < 7;x++)
@@ -22,14 +22,12 @@ void DistribuirPeca()
 			j1.pedras[x] = pecasEmbaralhadas[x];
 		}
 		
-		if(numeroDeJogadores == 2)
+		
+		int pecaAtual = 0;
+		for(x = 7; x < 14;x++)
 		{
-			int pecaAtual = 0;
-			for(x = 7; x < 14;x++)
-			{
-				j2.pedras[pecaAtual] = pecasEmbaralhadas[x];
-				pecaAtual++;
-			}
+			j2.pedras[pecaAtual] = pecasEmbaralhadas[x];
+			pecaAtual++;
 		}
 		
 		ultimaPecaEmbaralhadaPega = 14;
@@ -198,4 +196,53 @@ void jogarPeca(int jogadorAtual)
 		EscolherPecaOuComprar(2);
 	}
 }
+
+int EscolherPecaMaquina(int peca)
+{
+	int sair = 0;
+	if(VerificaPecaEscolhida(peca,2) == 1 && AdicionarPedraMesa(j2.pedras[peca - 1]) == 1)
+	{
+		RemovePecaJogador(peca,2);
+		sair = 1;
+	}
+	
+	return sair;
+}
+
+void jogarPecaPelaMaquina()
+{
+	int x = 1;
+	int tamanho = sizeof(j2.pedras) / sizeof(PEDRA);
+	int sair = 0;
+	do{
+		sair = EscolherPecaMaquina(x);
+		x++;
+	}while(sair == 0 && x < tamanho);
+	
+	int posicao = VerificarPosicaoUltimaPecaMaquina();
+	
+	if(x > posicao && sair == 0)
+	{
+		Comprar(2);
+	}
+}
+
+int VerificarPosicaoUltimaPecaMaquina()
+{
+	int posicao = 27;
+	
+	for(posicao = 27; posicao > 0; posicao--)
+	{
+		if(j2.pedras[posicao].ladodireito != -1)
+		{
+			return posicao;
+		}
+	}
+	
+	
+	return posicao;
+}
+
+
+
 

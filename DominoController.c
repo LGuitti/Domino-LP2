@@ -1,6 +1,7 @@
 #include "PedraDAO.h"
 #include "MesaDAO.h"
 #include "JogadorDAO.h"
+#include "Jogo.h"
 #include "View.h"
 #include<stdio.h>
 
@@ -18,7 +19,7 @@ void DefinirAcaoJogador(int opcao)
 {
 	switch (opcao)
     {
-        case 1: printf("Ainda nao implementado!!!\n");//IniciarJogo(1)
+        case 1: IniciarJogo(1);
                 break;
         case 2: IniciarJogo(2);
                 break;
@@ -42,6 +43,8 @@ void DefinirAcaoMenu(int opcao)
                 break;
     	case 4: Jogar();
                 break;
+        //case 5: CarregarJogo();
+        //        break;
         case 0: break;
         default: printf("Escolha uma opção válida \n");
 				break;

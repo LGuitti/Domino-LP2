@@ -13,7 +13,6 @@ int embaralhada = 0;
 int ultimaPecaEmbaralhadaPega = 0;
 PEDRA pecasDisponiveis[28];
 PEDRA pecasEmbaralhadas[28];
-
 PEDRA MontaPecaStruct(int j, int i)
 {
     PEDRA retorno;
