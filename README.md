@@ -5,6 +5,8 @@ Este trabalho tem o intuito de aplicar os conhecimentos da linhas C em um projet
 [Integrantes do grupo](##Integrantes-do-grupo-6)
  
 [Estruturas Criadas](##Estruturas)
+
+[Executando o programa](##Como-executar-o-programa)
 ***
 
 ## Integrantes
@@ -44,3 +46,7 @@ typedef struct TESTE
     PEDRA pedraLadoDireito;
 }MESA;
 ```
+
+## Como executar o programa
+
+O programa pode ser executado a partir do arquivo **Domino.exe**, caso queira abrir o projeto usar uma IDE de sua preferência, tais como [**Dev C++**](https://sourceforge.net/projects/orwelldevcpp/) ou [**Code Blocks**](http://www.codeblocks.org/downloads).
