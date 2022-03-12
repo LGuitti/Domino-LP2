@@ -1,4 +1,4 @@
-### COMP 2022: Grupo 5
+### AS 2022: Grupo 5
 
 * Luiz Eduardo Ramirez
 * Matheus do Amaral Genta Mansano
